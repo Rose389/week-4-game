@@ -1,38 +1,130 @@
+/* attempted to use following method to get footer on the bottom:
+HTML:
+<div id="container"> -- Mine is identical
+   <div id="header"></div> -- i used <header> instead
+   <div id="body"></div> -- Mine is #contentBody
+   <div id="footer"></div> -- I used <footer> instead
+</div>
+
+
+CSS:
+html, body {
+   margin:0;
+   padding:0;
+   height:100%;
+} -- Mine is identical
+
+#container {
+   min-height:100%;
+   position:relative;
+} -- identical
+
+#header {
+   background:#ff0;
+   padding:10px;
+} -- Irrelevant that my content is different
+
+#body {
+   padding:10px;
+   padding-bottom:60px;   --Height of the footer--
+} -- my height is different
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   --Height of the footer--
+   background:#6cf;
+} -- same but for height and bkgrnd color
+
+
+I do not understand why it does not work. It is very frustrating.
+*/
+
+
+html, body {
+  margin:0;
+  padding:0;
+  height: 100%;
+}
+
 body {
-  width: 100%;
+  padding: 0px;
+  padding-bottom: 80px;
   background-image:url("../images/norwegian_rose.png");
   background-repeat: repeat;
-}
-/* game header */
-header {
-  text-align: center;
-  background-color: gray;
-  height: 100px;
-  line-height: 100px;
-  padding: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 
-#gameName {
-  color: purple;
-  font-size: 3em;
-  font-weight: bold;
+#container {
+  min-height:100%;
+  position:relative;
 }
+
+/* game header */
+    /* banner - container */ 
+    header {
+      text-align: center;
+      background-color: gray;
+      height: auto;
+      line-height: 100px;
+      padding: 20px;
+    }
+
+        /* Begin game button */
+
+        /* h1 - title */ 
+        #gameName {
+          font-family: 'Berkshire Swash', cursive;
+          color: purple;
+          font-size: 5em;
+          font-weight: 900;
+        }
+
+        /* h4 - subTitle */ 
+        h4 {
+          color: white;
+          font-size: 1.5em;    
+          line-height: 60px;
+          font-weight: bold;
+          font-style: italic;
+        }
+
+        /* play again button --- do not refresh page, do not clear wins and losses */
+
+
+
 
 /* Instructions */
-#instructions {
+    /* container div for the rules*/ 
+    #gameRules {
+        df
+    }
 
-}
-#pHeader {
+        /* h3 label for rules */ 
+        #rulesHeader {
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 40px;
+        }
 
-}
+        /* ul - list container*/ 
+        #rulesList {
 
-#rules {
 
-}
+        }
 
-span {
-  font-weight: bold;
-}
+            /* li - game rule items*/ 
+            li {
+
+            }
+
+                /* li - emphasised label for each rule item*/ 
+                span {
+                    font-weight: bold;
+                }
+
+
 
 /* random number to match */
 
@@ -45,25 +137,47 @@ span {
 
 
 /* crystal buttons*/
-button {
-  border: none;
-  background-color: transparent;
-  padding: 0px;
-  float: left;
-  margin: 20px;
-}
+    /* container */ 
+    #crystalButtonsDiv {
+        width: 1020px;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+    }
 
-button>img {
-  max-height: 190px;
-  width: auto;
-  margin: auto;
-}
+        /* clickable area */ 
+        button {
+            border: none;
+            background-color: transparent;
+            padding: 0px;
+            float: left;
+            margin: 20px;
+            cursor: pointer;
+        }
 
-#buttons {
-  width: 1020px;
-  max-width: 100%;
-  margin: auto;
-}
+            /* crystal image */ 
+            button>img {
+                height: 190px;
+                width: auto;
+                margin: auto;
+            }
 
 
-/* new game button --- do not refresh page, do not clear wins and losses */
+
+/* footer */
+    /* container */ 
+    footer {
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        height:80px;   /* Height of the footer */
+        line-height: 80px;
+        padding: 20px;
+        text-align: center;
+        background-color: gray;
+    }
+
+        /* copyright */ p {
+            color: white;
+        }
+
