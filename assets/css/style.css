@@ -1,0 +1,69 @@
+body {
+  width: 100%;
+  background-image:url("../images/norwegian_rose.png");
+  background-repeat: repeat;
+}
+/* game header */
+header {
+  text-align: center;
+  background-color: gray;
+  height: 100px;
+  line-height: 100px;
+  padding: 20px;
+}
+
+#gameName {
+  color: purple;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* Instructions */
+#instructions {
+
+}
+#pHeader {
+
+}
+
+#rules {
+
+}
+
+span {
+  font-weight: bold;
+}
+
+/* random number to match */
+
+
+
+
+/* total wins and losses */
+
+/* current game score */
+
+
+/* crystal buttons*/
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  float: left;
+  margin: 20px;
+}
+
+button>img {
+  max-height: 190px;
+  width: auto;
+  margin: auto;
+}
+
+#buttons {
+  width: 1020px;
+  max-width: 100%;
+  margin: auto;
+}
+
+
+/* new game button --- do not refresh page, do not clear wins and losses */

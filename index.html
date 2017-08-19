@@ -1,0 +1,62 @@
+<!--
+3. Here's how the app works:
+
+   * There will be four crystals displayed as buttons on the page.
+
+   * The player will be shown a random number at the start of the game.
+
+   * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+
+     * Your game will hide this amount until the player clicks a crystal.
+     * When they do click one, update the player's score counter.
+
+   * The player wins if their total score matches the random number from the beginning of the game.
+
+   * The player loses if their score goes above the random number.
+
+   * The game restarts whenever the player wins or loses.
+
+     * When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
+
+   * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
+
+##### Option 1 Game design notes
+
+* The random number shown at the start of the game should be between 19 - 120.
+
+* Each crystal should have a random hidden value between 1 - 12.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crystal Collector</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body>
+<header>
+  <h1 id="gameName">Crystal Collector!</h1>
+</header>
+  <div id="instructions">
+    <h3 id="pHeader">Instructions</h3>
+    <ul id="rules">
+      <li><span>Goal:</span> Collect the correct number of crystals.</li>
+      <li><span>Collecting Crystals:</span> Click on each crystal to collect them.</li>
+      <li><span>Scoring:</span> Each of the four(4) crystals below is worth 1-12 points. The value is random, changes with each game, and is hidden unless clicked.</li>
+      <li><span>Winning:</span> Match the number of crystals you collect to the number in the amythest crystal cluster.</li>
+      <li><span>Careful!</span> If you collect too many crystals you lose the game!</li>
+    </ul>
+  </div>
+  <div id="buttons">
+    <button id="Crystal-1"><img src="assets/images/crystalClusterWhite.png" /></button>
+
+    <button id="Crystal-2"><img src="assets/images/geodeWhite.png" /></button>
+
+    <button id="Crystal-3"><img src="assets/images/crystalSkull.png" /></button>
+
+    <button id="Crystal-4"><img src="assets/images/geodeLavender.png" /></button>
+  </div>
+</body>
+</html>
