@@ -14,10 +14,10 @@
 </head>
 <body>
 <!-- main container for all content to make footer stay where wanted -->
-<div id="container">
+<div class="clearfix" id="container">
 
   <!-- Game Title, subTitle, start and reset buttons -->
-  <header>
+  <div><header>
 
     <!-- Start Button -->
 
@@ -31,10 +31,10 @@
     <!-- Reset Button -->
 
 
-  </header>
+  </header></div>
 
   <!-- secondary container to hold all main content -->
-  <div id="contentBody">
+  <div class="clearfix vertical-container" id="contentBody">
 
   <!-- Container to hold the game rules -->
     <div id="gameRules">
@@ -42,18 +42,23 @@
       <h3 id="rulesHeader">Game Rules</h3>
 
       <!-- Unordered list of rules - <li>max-width 45em -->
-      <ul id="rulesList">
-        <li><span>Goal:</span> Collect the correct number of crystals.</li>
-        <li><span>Collecting Crystals:</span> Click on each crystal to collect them.</li>
-        <li><span>Scoring:</span> Each of the four(4) crystals below is worth 1-12 points. The value is random, changes with each game, and is hidden unless clicked.</li>
-        <li><span>Winning:</span> Match the number of crystals you collect to the number in the amythest crystal cluster.</li>
-        <li><span>Careful!</span> If you collect too many crystals you lose the game!</li>
+      <dl id="rulesList">
+        <dt>Goal</dt>
+        <dd>Collect the correct number of crystals.</dd>
+        <dt>Collecting Crystals</dt>
+        <dd>Click on each crystal to collect them.</dd>
+        <dt>Scoring</dt>
+        <dd>Each of the four(4) crystals below is worth 1-12 points. The value is random, changes with each game, and is hidden unless clicked.</dd>
+        <dt>Winning</dt>
+        <dd>Match the number of crystals you collect to the number in the amythest crystal cluster.</dd>
+        <dt>Careful!</dt>
+        <dd>If you collect too many crystals you lose the game!</dd>
       </ul>
 
     </div> <!-- end div #gameRules -->
 
     <!-- the four crystal buttons -->
-    <div id="crystalButtonsDiv">
+    <div class="clearfix vertical-container" id="crystalButtonsDiv">
       <button class="crystalButton" id="Crystal-1"><img src="assets/images/crystalClusterWhite.png" /></button>
 
       <button class="crystalButton" id="Crystal-2"><img src="assets/images/geodeWhite.png" /></button>
@@ -66,7 +71,7 @@
   </div><!-- end div #contentBody -->
 
   <!-- Footer with copyright -->
-  <footer>
+  <footer  class="vertical-container">
       <p>&copy; copyright 2017 Marguerite Seifert</p>
   </footer>
 

@@ -1,46 +1,8 @@
-/* attempted to use following method to get footer on the bottom:
-HTML:
-<div id="container"> -- Mine is identical
-   <div id="header"></div> -- i used <header> instead
-   <div id="body"></div> -- Mine is #contentBody
-   <div id="footer"></div> -- I used <footer> instead
-</div>
-
-
-CSS:
-html, body {
-   margin:0;
-   padding:0;
-   height:100%;
-} -- Mine is identical
-
-#container {
-   min-height:100%;
-   position:relative;
-} -- identical
-
-#header {
-   background:#ff0;
-   padding:10px;
-} -- Irrelevant that my content is different
-
-#body {
-   padding:10px;
-   padding-bottom:60px;   --Height of the footer--
-} -- my height is different
-
-#footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   --Height of the footer--
-   background:#6cf;
-} -- same but for height and bkgrnd color
-
-
-I do not understand why it does not work. It is very frustrating.
-*/
-
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 html, body {
   margin:0;
@@ -49,26 +11,28 @@ html, body {
 }
 
 body {
-  padding: 0px;
-  padding-bottom: 80px;
   background-image:url("../images/norwegian_rose.png");
   background-repeat: repeat;
   font-family: 'Raleway', sans-serif;
 }
 
 #container {
-  min-height:100%;
   position:relative;
+  padding: 0px;
+  padding-bottom: 80px;
+  min-height:100%;
 }
+
+
 
 /* game header */
     /* banner - container */ 
-    header {
-      text-align: center;
-      background-color: gray;
-      height: auto;
-      line-height: 100px;
+    div>header {
       padding: 20px;
+      height: auto;
+      background-color: gray;
+      line-height: 100px;
+      text-align: center;
     }
 
         /* Begin game button */
@@ -84,7 +48,7 @@ body {
         /* h4 - subTitle */ 
         h4 {
           color: white;
-          font-size: 1.5em;    
+          font-size: 1.25em;    
           line-height: 60px;
           font-weight: bold;
           font-style: italic;
@@ -93,37 +57,50 @@ body {
         /* play again button --- do not refresh page, do not clear wins and losses */
 
 
-
+#contentBody {
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+          flex-wrap: wrap;
+}
 
 /* Instructions */
     /* container div for the rules*/ 
     #gameRules {
-        df
+      margin: 20px;
+      padding: 36px;
+      border: ridge 3px gray;
+      border-radius: 36px;
+      max-width: 680px;
+      background-color: white;
     }
 
         /* h3 label for rules */ 
         #rulesHeader {
-            font-size: 1.5em;
-            font-weight: bold;
-            line-height: 40px;
+          font-size: 2em;
+          font-weight: bolder;
+          line-height: 60px;
         }
 
         /* ul - list container*/ 
         #rulesList {
-
-
+          font-size: 1em;
+          line-height: 1.15em;
+          max-width: 24em;
         }
 
-            /* li - game rule items*/ 
-            li {
-
+           /* li - emphasised label for each rule item*/ 
+            dt {
+              margin-bottom: 5px;
+              font-weight: bold;
             }
+                
+              /* li - game rule items*/ 
+              dd {
+                margin-bottom: 15px;
+              }
 
-                /* li - emphasised label for each rule item*/ 
-                span {
-                    font-weight: bold;
-                }
-
+                
 
 
 /* random number to match */
@@ -139,45 +116,65 @@ body {
 /* crystal buttons*/
     /* container */ 
     #crystalButtonsDiv {
-        width: 1020px;
-        max-width: 100%;
-        height: auto;
-        margin: auto;
+      display: -webkit-flex;
+      display:         flex;
+      -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+              flex-wrap: wrap;
+      align-content: center;
+      margin: 20px auto;
+      max-width: 36em;
+      height: auto;
     }
 
         /* clickable area */ 
         button {
-            border: none;
-            background-color: transparent;
-            padding: 0px;
-            float: left;
-            margin: 20px;
-            cursor: pointer;
+          padding: 0px;
+          margin: 10px;
+          border: none;
+          width: 200px;
+          max-width: 50%;
+          height: auto;
+          background-color: transparent;
+          cursor: pointer;
         }
 
             /* crystal image */ 
             button>img {
-                height: 190px;
-                width: auto;
-                margin: auto;
+              max-height: 100%;
+              max-width: 100%;
+              margin: auto;
             }
 
 
 
 /* footer */
     /* container */ 
-    footer {
-        position: absolute;
-        bottom:0;
-        width: 100%;
-        height:80px;   /* Height of the footer */
-        line-height: 80px;
-        padding: 20px;
-        text-align: center;
-        background-color: gray;
+    div>footer {
+      position: absolute;
+      bottom:0;
+      width: 100%;
+      height:80px;   /* Height of the footer */
+      line-height: 80px;
+      padding: 20px;
+      text-align: center;
+      background-color: gray;
     }
 
         /* copyright */ p {
-            color: white;
+          color: white;
         }
 
+.vertical-container {
+  height: auto;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+
+.clearfix {
+  overflow: auto;
+}
