@@ -5,22 +5,23 @@
 }
 
 html, body {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   height: 100%;
 }
 
 body {
-  background-image:url("../images/norwegian_rose.png");
+  background-image: url("../images/norwegian_rose.png");
   background-repeat: repeat;
   font-family: 'Raleway', sans-serif;
 }
 
 #container {
-  position:relative;
+  position: relative;
   padding: 0px;
-  padding-bottom: 80px;
-  min-height:100%;
+  padding-bottom: 100px;
+  min-height: 100%;
+  min-width: 482px;
 }
 
 
@@ -30,19 +31,29 @@ body {
     div>header {
       padding: 20px;
       height: auto;
-      background-color: gray;
+      background-color: darkgray;
       line-height: 100px;
       text-align: center;
     }
 
         /* Begin game button */
+        #startGame {
+          float: left;
+          padding: 20px;
+          margin: 50px;
+          border: outset 3px slategray;
+          border-radius: 18px;
+          background-color: plum;
+          font-family: 'Berkshire Swash', cursive;
+          color: purple;
+          font-size: 2em;
+        }
 
         /* h1 - title */ 
         #gameName {
           font-family: 'Berkshire Swash', cursive;
           color: purple;
           font-size: 5em;
-          font-weight: 900;
         }
 
         /* h4 - subTitle */ 
@@ -50,7 +61,6 @@ body {
           color: white;
           font-size: 1.25em;    
           line-height: 60px;
-          font-weight: bold;
           font-style: italic;
         }
 
@@ -58,16 +68,13 @@ body {
 
 
 #contentBody {
-  display: -webkit-flex;
-  display:         flex;
-  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
-          flex-wrap: wrap;
+
 }
 
 /* Instructions */
     /* container div for the rules*/ 
     #gameRules {
-      margin: 20px;
+      margin: 36px auto;
       padding: 36px;
       border: ridge 3px gray;
       border-radius: 36px;
@@ -78,24 +85,26 @@ body {
         /* h3 label for rules */ 
         #rulesHeader {
           font-size: 2em;
-          font-weight: bolder;
           line-height: 60px;
+          font-family: 'Berkshire Swash', cursive;
         }
 
-        /* ul - list container*/ 
+        /* dl - list container*/ 
         #rulesList {
           font-size: 1em;
           line-height: 1.15em;
           max-width: 24em;
         }
 
-           /* li - emphasised label for each rule item*/ 
+           /* dt - emphasised label for each rule item*/ 
             dt {
               margin-bottom: 5px;
-              font-weight: bold;
+              font-family: 'Berkshire Swash', cursive;
+              letter-spacing: .2em;
+
             }
                 
-              /* li - game rule items*/ 
+              /* dd - game rule items*/ 
               dd {
                 margin-bottom: 15px;
               }
@@ -104,23 +113,44 @@ body {
 
 
 /* random number to match */
-
+#matchScore { 
+  height: 3em; 
+  width: 200px;
+  margin: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 18px;
+  border: double 3px gray;
+  text-align: center;
+  font-weight: bold;
+}
 
 
 
 /* total wins and losses */
+#winsLosses {
+  width: 150px;
+  margin: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 18px;
+  border: double 3px gray;
+}
+
 
 /* current game score */
-
+#currentScore {
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 18px;
+  border: double 3px gray;
+}
 
 /* crystal buttons*/
     /* container */ 
     #crystalButtonsDiv {
-      display: -webkit-flex;
-      display:         flex;
-      -webkit-flex-wrap: wrap; /* Safari 6.1+ */
-              flex-wrap: wrap;
-      align-content: center;
       margin: 20px auto;
       max-width: 36em;
       height: auto;
@@ -164,6 +194,9 @@ body {
           color: white;
         }
 
+
+/* formatting classes */        
+
 .vertical-container {
   height: auto;
   display: -webkit-flex;
@@ -174,6 +207,16 @@ body {
           justify-content: center;
 }
 
+.flex-wrap {
+      display: -webkit-flex;
+      display:         flex;
+      -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+              flex-wrap: wrap;
+}
+
+.bold {
+  font-weight: bold;
+}
 
 .clearfix {
   overflow: auto;

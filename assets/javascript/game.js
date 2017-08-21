@@ -1,3 +1,15 @@
+$(document).ready(function() {
+
+      // Here we use jQuery to select the header with "click-me" as its ID.
+      // Whenever it is clicked...
+      $("#startGame").on("click", function() {
+
+        // ... we trigger an alert.
+        alert("I've been clicked!");
+      });
+
+
+
 /* 
 * BEGIN GAME
 * on button click 
@@ -7,9 +19,14 @@
 * 
 */
 
-$('#beginGame').on('click', function(){ instructions});
+var matchScore = randomIntFromInterval("")
 
+function randomIntFromInterval() {
+  return Math.floor(Math.random()*(120-19+1)+19);
+                  }
 
+$("#matchScore").html("Collect " + matchScore + " Crystals");
+      
 
 
 /* 
@@ -20,7 +37,10 @@ $('#beginGame').on('click', function(){ instructions});
 * When they do click one, update the player's score counter.
 */
 $('.crystalButton').on('click', function(){
-
+    var Crystal_1 = 
+    var Crystal_2 = 
+    var Crystal_3 = 
+    var Crystal_4 = 
 });
 
 
@@ -29,7 +49,9 @@ $('.crystalButton').on('click', function(){
 
     /* add points to currentGameScore */
 
+    var score = ("")
 
+$("#currentScore").html("Your current total is:\n" + score)
 
 
 /* 
@@ -57,3 +79,4 @@ $('.crystalButton').on('click', function(){
 
 
 /* begin game - on button click */
+    });
