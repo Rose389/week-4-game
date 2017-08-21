@@ -1,32 +1,33 @@
 $(document).ready(function() {
 
-      // Here we use jQuery to select the header with "click-me" as its ID.
-      // Whenever it is clicked...
+
       $("#startGame").on("click", function() {
 
-        // ... we trigger an alert.
         alert("I've been clicked!");
-      });
+      
+});
 
+// Set the number of crystals to be collected; random number between 19 and 120
+var matchScore = getMatchScore("");
 
-
-/* 
-* BEGIN GAME
-* on button click 
-* The random number shown at the start of the game should be between 19 - 120.
-* Each crystal should have a random hidden value between 1 - 12.
-* 
-* 
-*/
-
-var matchScore = randomIntFromInterval("")
-
-function randomIntFromInterval() {
+function getMatchScore() {
   return Math.floor(Math.random()*(120-19+1)+19);
-                  }
+};
 
+// Insert the number of crystals to be collected into the #matchScore empty <div>
 $("#matchScore").html("Collect " + matchScore + " Crystals");
       
+
+
+// Set the four values of the crystal buttons. each has a randome number between 1 and 12
+var Crystal_1 = getCrystalValue("");
+var Crystal_2 = getCrystalValue("");
+var Crystal_3 = getCrystalValue("");
+var Crystal_4 = getCrystalValue("");
+
+function getCrystalValue() {
+  return Math.floor(Math.random()*(12)+1);
+};
 
 
 /* 
@@ -36,22 +37,24 @@ $("#matchScore").html("Collect " + matchScore + " Crystals");
 * Your game will hide this amount until the player clicks a crystal.
 * When they do click one, update the player's score counter.
 */
-$('.crystalButton').on('click', function(){
-    var Crystal_1 = 
-    var Crystal_2 = 
-    var Crystal_3 = 
-    var Crystal_4 = 
+
+
+$(".crystalButton").on("click", function(){
+
+    var score = ("");
+
+    $("#currentScore").html("Your current total is:\n" + score);
+
+
 });
-
-
     
 
 
-    /* add points to currentGameScore */
 
-    var score = ("")
 
-$("#currentScore").html("Your current total is:\n" + score)
+/* add points to currentGameScore */
+
+
 
 
 /* 
@@ -59,7 +62,14 @@ $("#currentScore").html("Your current total is:\n" + score)
 * The player wins if their total score matches the random number from the beginning of the game.
 * The player loses if their score goes above the random number.
 */
+          // If you collect the right number of crystals -- winner
+          if (score === matchScore) {
+            $("#result").html("Winner!!");
 
+          // but, if you collect too many crystals -- try again
+          } else if (score > matchScore) {
+            $("#result").html("Too bad :-( \n Try Again!");
+          };
 
 /* 
 * RESET BUTTON
@@ -73,10 +83,32 @@ $("#currentScore").html("Your current total is:\n" + score)
 
 
 /* begin game - on button click */
+// When random-button is clicked...
+/*
+      $("#random-button").on("click", function() {
+
+        // Create a string which will hold the lottery number
+        var lottoNumber = "";
+
+        // Then initiate a loop to generate 9 separate numbers
+        for (var i = 0; i < 9; i++) {
+
+          // For each iteration, generate a new random number between 1 and 9.
+          var random = Math.floor(Math.random() * 9) + 1;
+
+          // Take this number and then add it to the rest of the string.
+          // In essence, we are iteratively building a string of numbers. (e.g. First: 1, Second: 13, Third: 135, etc.)
+          lottoNumber = random + lottoNumber;
+
+        }
+
+        // Once we have our final lotto number, we'll prepend it to the top of our random-number div.
+        $("#random-number").prepend("<br><hr>" + lottoNumber);
+      });
 
 
 /* begin game - on button click */
 
 
 /* begin game - on button click */
-    });
+});
