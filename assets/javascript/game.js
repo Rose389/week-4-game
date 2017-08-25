@@ -1,34 +1,59 @@
 $(document).ready(function() {
 
+/*beginning
+  game set  up
+    create variable or tracking data:
+   score, wins, losses, highestScore, targetScore, 4 gem values
+*/
+    var targetScore
+    var playerRecord = {
+          wins: "",
+          losses: "", 
+          current: "",
+          highest: "",
+        }
 
-      $("#startGame").on("click", function() {
+    // 4 gem values
+    // Set the four values of the crystal buttons. each has a randome number between 1 and 12
+    /*var firstCrystal = getCrystalValue();
+    var secondCrystal = getCrystalValue();
+    var thirdCrystal = getCrystalValue();
+    var fourthCrystal = getCrystalValue();*/
 
-        alert("I've been clicked!");
-      
+    var crystals = {
+      first: 0,
+      second: 0,
+      third: 0,
+      fourth: 0
+    };
+
+
+$("#highScore").html("HIGH SCORE \n <hr>" + playerRecord.highest);
+
+$("#startGame").on("click", function() {
+
+    getTargetScore();
+
+    getCrystalValue();
+
+
+    // Insert the number of crystals to be collected into the #targetScore empty <div>
+    $("#targetScore").html("Collect " + targetScore + " Crystals");
+
 });
 
+// Target Score
 // Set the number of crystals to be collected; random number between 19 and 120
-var matchScore = getMatchScore("");
-
-function getMatchScore() {
-  return Math.floor(Math.random()*(120-19+1)+19);
+function getTargetScore() {
+  targetScore = Math.floor(Math.random()*(120-19+1)+19);
 };
-
-// Insert the number of crystals to be collected into the #matchScore empty <div>
-$("#matchScore").html("Collect " + matchScore + " Crystals");
-      
-
-
-// Set the four values of the crystal buttons. each has a randome number between 1 and 12
-var Crystal_1 = getCrystalValue("");
-var Crystal_2 = getCrystalValue("");
-var Crystal_3 = getCrystalValue("");
-var Crystal_4 = getCrystalValue("");
 
 function getCrystalValue() {
-  return Math.floor(Math.random()*(12)+1);
+        crystals.first = $('#1').val(Math.floor(Math.random()*(12)+1));
+        crystals.second =  $('#2').val(Math.floor(Math.random()*(12)+1));
+        crystals.third =  $('#3').val(Math.floor(Math.random()*(12)+1));
+        crystals.fourth =  $('#4').val(Math.floor(Math.random()*(12)+1));
 };
-
 
 /* 
 * CRYSTALBUTTON FUNCTIONALITY
@@ -38,15 +63,67 @@ function getCrystalValue() {
 * When they do click one, update the player's score counter.
 */
 
+var update = $('#currentScore').html('Your current total is: ' + playerRecord.current);
 
-$(".crystalButton").on("click", function(){
+$("#crystal-1").on("click", function(updateScore){
 
-    var score = ("");
+});
 
-    $("#currentScore").html("Your current total is:\n" + score);
+$("#crystal-2").on("click", function(updateScore){
+
+});
+
+$("#crystal-3").on("click", function(updateScore){
+    return $("#3").html(function(i, origVal){
+            return "Old score: " + origVal + " New score:  (index: " + i + ")"; 
+        });
+});
+
+$("#crystal-4").on("click", function(updateScore){
+
+});
+
+
+function updateScore() {
+
+    // get crystal value
+      crystals.this ;
+
+    // get current score
+      var a = playerRecord.current;
+
+    // add crystal value to current score
+      a = a + crystals.this;
+};
+
+function checkScore() {
+    // check score with targetScore
+    // get target score
+    // get current score
+
+      if (playerRecord.current === targetScore) {
+        playerRecord.wins = playerRecord.wins + 1;
+        $("#result").html("Winner!!");
+      } else if (playerRecord.current > targetScore) {
+        playerRecord.losses = playerRecord.losses + 1;
+        $("#result").html("Too bad :-( \n Try Again!");
+      }
+};
 
 
 });
+
+
+/*
+
+
+end - game over
+  either player wins or player losses
+  get highest score var
+  reset game - score, target, gem values
+
+*/
+
     
 
 
@@ -62,14 +139,7 @@ $(".crystalButton").on("click", function(){
 * The player wins if their total score matches the random number from the beginning of the game.
 * The player loses if their score goes above the random number.
 */
-          // If you collect the right number of crystals -- winner
-          if (score === matchScore) {
-            $("#result").html("Winner!!");
-
-          // but, if you collect too many crystals -- try again
-          } else if (score > matchScore) {
-            $("#result").html("Too bad :-( \n Try Again!");
-          };
+       
 
 /* 
 * RESET BUTTON
@@ -85,15 +155,15 @@ $(".crystalButton").on("click", function(){
 /* begin game - on button click */
 // When random-button is clicked...
 /*
-      $("#random-button").on("click", function() {
+      $(".Crystals").on("click", function() {
 
-        // Create a string which will hold the lottery number
-        var lottoNumber = "";
+        // Create a string which will hold the currentScore
+        currentScore = "";
 
         // Then initiate a loop to generate 9 separate numbers
-        for (var i = 0; i < 9; i++) {
+        for (var i = 0; i < targetScore; i + crystalValue) {
 
-          // For each iteration, generate a new random number between 1 and 9.
+          // For each iteration, add the clicked crystalValue to the score
           var random = Math.floor(Math.random() * 9) + 1;
 
           // Take this number and then add it to the rest of the string.
@@ -106,9 +176,9 @@ $(".crystalButton").on("click", function(){
         $("#random-number").prepend("<br><hr>" + lottoNumber);
       });
 
-
+*/
 /* begin game - on button click */
 
 
 /* begin game - on button click */
-});
+

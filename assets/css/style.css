@@ -19,7 +19,7 @@ body {
 #container {
   position: relative;
   padding: 0px;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   min-height: 100%;
   min-width: 482px;
 }
@@ -29,7 +29,7 @@ body {
 /* game header */
     /* banner - container */ 
     div>header {
-      padding: 20px;
+      padding: 10px auto;
       height: auto;
       background-color: darkgray;
       line-height: 100px;
@@ -74,6 +74,7 @@ body {
 /* Instructions */
     /* container div for the rules*/ 
     #gameRules {
+      float: left;
       margin: 36px auto;
       padding: 36px;
       border: ridge 3px gray;
@@ -109,44 +110,59 @@ body {
                 margin-bottom: 15px;
               }
 
-                
+/* All the scores */            
+    /* container for score divs */   
+    #scoresDiv {
+      width: 100%;
+      margin: 20px;
+      margin-top: 0px;
+      padding: 20px;
+    }
+
+        /* random number to match */
+        #targetScore { 
+          height: 3em; 
+          width: 200px;
+          margin: 20px;
+          padding: 10px;
+          background-color: white;
+          border-radius: 18px;
+          border: double 3px gray;
+          text-align: center;
+          font-weight: bold;
+        }
 
 
-/* random number to match */
-#matchScore { 
-  height: 3em; 
-  width: 200px;
-  margin: 20px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 18px;
-  border: double 3px gray;
-  text-align: center;
-  font-weight: bold;
-}
 
+        /* total wins and losses */
+        #winsLosses {
+          width: 150px;
+          margin: 20px;
+          padding: 10px;
+          background-color: white;
+          border-radius: 18px;
+          border: double 3px gray;
+        }
 
+        /* highest game score */
+        #highScore {
+          width: 150px;
+          margin: 20px;
+          padding: 10px;
+          background-color: white;
+          border-radius: 18px;
+          border: double 3px gray;
+        }
 
-/* total wins and losses */
-#winsLosses {
-  width: 150px;
-  margin: 20px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 18px;
-  border: double 3px gray;
-}
-
-
-/* current game score */
-#currentScore {
-  width: 250px;
-  margin: 20px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 18px;
-  border: double 3px gray;
-}
+        /* current game score */
+        #currentScore {
+          width: 250px;
+          margin: 20px;
+          padding: 10px;
+          background-color: white;
+          border-radius: 18px;
+          border: double 3px gray;
+        }
 
 /* crystal buttons*/
     /* container */ 
@@ -175,6 +191,11 @@ body {
               margin: auto;
             }
 
+            /* crystal values */
+            button>input {
+              opacity: .5;
+            };
+
 
 
 /* footer */
@@ -183,8 +204,8 @@ body {
       position: absolute;
       bottom:0;
       width: 100%;
-      height:80px;   /* Height of the footer */
-      line-height: 80px;
+      height:40px;   /* Height of the footer */
+      line-height: 40px;
       padding: 20px;
       text-align: center;
       background-color: gray;

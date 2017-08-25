@@ -59,8 +59,25 @@
     </div> <!-- end div #gameRules -->
 
     <div id="gameBoard">
+
+      <!-- the four crystal buttons -->
+      <div class="clearfix vertical-container flex-wrap" id="crystalButtonsDiv">
+        <form>
+        <button class="crystalButton" id="Crystal_1"><img src="assets/images/crystalClusterWhite.png" /><input type="number" class="crystalValue" id="1" value=""></button>
+
+        <button class="crystalButton" id="Crystal_2"><img src="assets/images/geodeWhite.png" /><input type="number" class="crystalValue" id="2" value=""></button>
+
+        <button class="crystalButton" id="Crystal_3"><img src="assets/images/crystalSkull.png" /><input type="number" class="crystalValue" id="3" value=""></button>
+
+        <button class="crystalButton" id="Crystal_4"><img src="assets/images/geodeLavender.png" /><input type="number" class="crystalValue" id="4" value=""></button>
+        </form>
+      </div><!-- end div #crystalButtonsDiv -->
+    </div>
+
+    <div class="clearfix vertical-container flex-wrap" id="scoresDiv">
+
       <!-- score to match ("Collect " + random + " crystals.") -->
-      <div id="matchScore"></div>
+      <div id="targetScore"></div>
 
       <!-- record of wins and losses -->
       <div id="winsLosses">
@@ -68,20 +85,14 @@
         <div class="bold">Losses: <span id="losses"></span> </div>
       </div> 
 
+      <!-- Highest Score -->
+      <div id="highScore"></div>
+
+
       <!-- the current round's score ("Your current total is:\n" + score)-->
-      <div id="currentScore"></div>
+      <div id="currentScore">Your current total is: </div>
 
-      <!-- the four crystal buttons -->
-      <div class="clearfix vertical-container flex-wrap" id="crystalButtonsDiv">
-        <button class="crystalButton" id="Crystal_1"><img src="assets/images/crystalClusterWhite.png" /></button>
-
-        <button class="crystalButton" id="Crystal_2"><img src="assets/images/geodeWhite.png" /></button>
-
-        <button class="crystalButton" id="Crystal_3"><img src="assets/images/crystalSkull.png" /></button>
-
-        <button class="crystalButton" id="Crystal_4"><img src="assets/images/geodeLavender.png" /></button>
-      </div><!-- end div #crystalButtonsDiv -->
-    </div>
+    </div><!-- end div #scoresDiv -->
 
   </div><!-- end div #contentBody -->
 
